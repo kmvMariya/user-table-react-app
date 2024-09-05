@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useEffect } from 'react';
+import { useSelector, useDispatch} from "react-redux";
+import { fetchUsers } from './store/userSlice';
+import UserTable from "./components/UserTable";
+import columns from "./configColumns";
 
 function App() {
+  const {status, error, users} = useSelector(state => state.users);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
+  if (status === 'loading') {
+    return <h2 className='loading-message'>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2 className='loading-message'>An error occurred: {error}</h2>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <UserTable
+        columns={columns}
+      />
     </div>
   );
 }
