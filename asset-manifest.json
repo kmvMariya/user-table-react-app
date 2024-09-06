@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kmvMariya/user-table-react-app/static/css/main.de3ff70f.css",
+    "main.js": "/kmvMariya/user-table-react-app/static/js/main.6792bc4e.js",
+    "static/js/453.d01623e8.chunk.js": "/kmvMariya/user-table-react-app/static/js/453.d01623e8.chunk.js",
+    "index.html": "/kmvMariya/user-table-react-app/index.html",
+    "main.de3ff70f.css.map": "/kmvMariya/user-table-react-app/static/css/main.de3ff70f.css.map",
+    "main.6792bc4e.js.map": "/kmvMariya/user-table-react-app/static/js/main.6792bc4e.js.map",
+    "453.d01623e8.chunk.js.map": "/kmvMariya/user-table-react-app/static/js/453.d01623e8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de3ff70f.css",
+    "static/js/main.6792bc4e.js"
+  ]
+}
