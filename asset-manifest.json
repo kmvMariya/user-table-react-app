@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/github.io/user-table-react-app/static/css/main.de3ff70f.css",
-    "main.js": "/github.io/user-table-react-app/static/js/main.3f291c31.js",
-    "static/js/453.d01623e8.chunk.js": "/github.io/user-table-react-app/static/js/453.d01623e8.chunk.js",
-    "index.html": "/github.io/user-table-react-app/index.html",
-    "main.de3ff70f.css.map": "/github.io/user-table-react-app/static/css/main.de3ff70f.css.map",
-    "main.3f291c31.js.map": "/github.io/user-table-react-app/static/js/main.3f291c31.js.map",
-    "453.d01623e8.chunk.js.map": "/github.io/user-table-react-app/static/js/453.d01623e8.chunk.js.map"
+    "main.css": "/user-table-react-app/static/css/main.de3ff70f.css",
+    "main.js": "/user-table-react-app/static/js/main.376ac817.js",
+    "static/js/453.d01623e8.chunk.js": "/user-table-react-app/static/js/453.d01623e8.chunk.js",
+    "index.html": "/user-table-react-app/index.html",
+    "main.de3ff70f.css.map": "/user-table-react-app/static/css/main.de3ff70f.css.map",
+    "main.376ac817.js.map": "/user-table-react-app/static/js/main.376ac817.js.map",
+    "453.d01623e8.chunk.js.map": "/user-table-react-app/static/js/453.d01623e8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.de3ff70f.css",
-    "static/js/main.3f291c31.js"
+    "static/js/main.376ac817.js"
   ]
 }
