@@ -32,7 +32,7 @@ function SearchField({ column }: SearchFieldProps) {
     const isFilter = Boolean(filterUser[column.fieldName]);
 
     return ( 
-        <div id="searchSection">
+        <div className="searchSection">
             <label htmlFor={column.fieldName} id="searchLabel">
                 {column.label}
             </label>
@@ -41,20 +41,17 @@ function SearchField({ column }: SearchFieldProps) {
                     name={column.fieldName}
                     type="text"
                     placeholder={`Filter by ${column.label}`}
-                    id={column.fieldName}
                     value={filterUser[column.fieldName] || ''}
                     onChange={handleFilterUser}
                 />
                 <img id="searchIcon" src={search} alt="Search" />
             </div>
-            {isFilter && (
-                <button 
-                    onClick={handleClearText}  
-                    className="clear-button"
-                >
-                    &times;
-                </button>
-            )}
+            <button 
+                onClick={handleClearText}  
+                className={`clear-button ${isFilter ? '' : 'hidden'}`}
+            >
+                &times;
+            </button>
         </div>
     );
 }
