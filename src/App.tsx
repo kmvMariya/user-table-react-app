@@ -1,13 +1,13 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect } from 'react';
-import { useSelector, useDispatch} from "react-redux";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from './store/userSlice';
-import UserTable from "./components/UserTable";
-import columns from "./configColumns";
+import UserTable from './components/UserTable';
+import columns from './configColumns';
+import { RootState, AppDispatch } from './store/store';
 
 function App() {
-  const {status, error, users} = useSelector(state => state.users);
-  const dispatch = useDispatch();
+  const { status, error } = useSelector((state: RootState) => state.users);
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -23,9 +23,7 @@ function App() {
 
   return (
     <div className="wrapper">
-      <UserTable
-        columns={columns}
-      />
+      <UserTable columns={columns} />
     </div>
   );
 }

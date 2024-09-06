@@ -1,8 +1,16 @@
-import PropTypes from "prop-types";
+import React from "react";
 import SearchField from "./SearchField";
 
-function TableHeader({ columns }) {
+interface Column {
+    fieldName: string;
+    label: string;
+}
 
+interface TableHeaderProps {
+    columns: Column[];
+}
+
+function TableHeader({ columns }: TableHeaderProps) {
     return (
         <thead>
             <tr>
@@ -17,9 +25,5 @@ function TableHeader({ columns }) {
         </thead>
     );
 }
-
-TableHeader.propTypes = {
-    columns: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
 
 export default TableHeader;
