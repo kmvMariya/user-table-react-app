@@ -17,7 +17,7 @@ interface FilterState {
     [key: string]: string;
 }
 
-const SearchField: React.FC<SearchFieldProps> = ({ column }) => {
+function SearchField({ column }: SearchFieldProps) {
     const filterUser = useSelector((state: RootState) => state.filter as FilterState);
     const dispatch = useDispatch<AppDispatch>();
 

@@ -15,7 +15,7 @@ interface RowProps {
     columns: Column[];
 }
 
-const Row: React.FC<RowProps> = ({ user, columns }) => {
+function Row({ user, columns } : RowProps) {
     return (
         <tr>
             {columns.map((column) => (
