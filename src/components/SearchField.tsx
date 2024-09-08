@@ -41,6 +41,7 @@ function SearchField({ column }: SearchFieldProps) {
                     name={column.fieldName}
                     type="text"
                     placeholder={`Filter by ${column.label}`}
+                    id={column.fieldName}
                     value={filterUser[column.fieldName] || ''}
                     onChange={handleFilterUser}
                 />

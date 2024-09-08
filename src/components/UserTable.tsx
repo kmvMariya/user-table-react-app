@@ -40,7 +40,7 @@ function UserTable({ columns }: UserTableProps) {
     }
 
     return (
-        <Table className="custom-table" striped bordered hover>
+        <Table className="custom-table">
             <TableHeader columns={columns} />
             <tbody>
                 {filteredUsers.map((user) => (
