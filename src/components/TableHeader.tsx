@@ -1,16 +1,12 @@
 import React from "react";
 import SearchField from "./SearchField";
+import { IColumn } from '../types/interfaces';
 
-interface Column {
-    fieldName: string;
-    label: string;
+interface ITableHeaderProps {
+    columns: IColumn[];
 }
 
-interface TableHeaderProps {
-    columns: Column[];
-}
-
-function TableHeader({ columns }: TableHeaderProps) {
+function TableHeader({ columns }: ITableHeaderProps) {
     return (
         <thead>
             <tr>

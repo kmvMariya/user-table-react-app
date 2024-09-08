@@ -1,21 +1,12 @@
 import React from "react";
+import { IUser, IColumn } from '../types/interfaces';
 
-interface Column {
-    fieldName: string;
-    label: string;
+interface IRowProps {
+    user: IUser;
+    columns: IColumn[];
 }
 
-interface User {
-    id: number;
-    [key: string]: any;
-}
-
-interface RowProps {
-    user: User;
-    columns: Column[];
-}
-
-function Row({ user, columns } : RowProps) {
+function Row({ user, columns } : IRowProps) {
     return (
         <tr>
             {columns.map((column) => (

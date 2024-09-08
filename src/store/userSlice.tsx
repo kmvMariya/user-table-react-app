@@ -1,26 +1,19 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { IUser } from '../types/interfaces';
 
-export interface User {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  phone: string;
-}
-
-interface UserState {
-  users: User[];
+interface IUserState {
+  users: IUser[];
   status: 'idle' | 'loading' | 'resolved' | 'rejected';
   error: string | null;
 }
 
-const initialState: UserState = {
+const initialState: IUserState = {
   users: [],
   status: 'idle',
   error: null,
 };
 
-export const fetchUsers = createAsyncThunk<User[], void, { rejectValue: string }>(
+export const fetchUsers = createAsyncThunk<IUser[], void, { rejectValue: string }>(
   'users/fetchUsers',
   async function (_, { rejectWithValue }) {
     try {
@@ -48,7 +41,7 @@ const userSlice = createSlice({
         state.status = 'loading';
         state.error = null;
       })
-      .addCase(fetchUsers.fulfilled, (state, action: PayloadAction<User[]>) => {
+      .addCase(fetchUsers.fulfilled, (state, action: PayloadAction<IUser[]>) => {
         state.status = 'resolved';
         state.users = action.payload;
       })

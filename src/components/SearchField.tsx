@@ -3,22 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { setFilter, clearFilter } from "../store/filterSlice";
 import search from '../images/search.png';
 import { RootState, AppDispatch } from "../store/store";
+import { IColumn,  IFilterState} from '../types/interfaces';
 
-interface Column {
-    fieldName: string;
-    label: string;
+interface ISearchFieldProps {
+    column: IColumn;
 }
 
-interface SearchFieldProps {
-    column: Column;
-}
-
-interface FilterState {
-    [key: string]: string;
-}
-
-function SearchField({ column }: SearchFieldProps) {
-    const filterUser = useSelector((state: RootState) => state.filter as FilterState);
+function SearchField({ column }: ISearchFieldProps) {
+    const filterUser = useSelector((state: RootState) => state.filter as IFilterState);
     const dispatch = useDispatch<AppDispatch>();
 
     const handleFilterUser = (e: React.ChangeEvent<HTMLInputElement>) => {

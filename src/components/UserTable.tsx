@@ -4,28 +4,15 @@ import Table from "react-bootstrap/Table";
 import Row from "./Row";
 import TableHeader from "./TableHeader";
 import { RootState } from "../store/store";
+import { IUser, IColumn,  IFilterState} from '../types/interfaces';
 
-interface UserTableProps {
-    columns: Column[];
+interface IUserTableProps {
+    columns: IColumn[];
 }
 
-interface Column {
-    fieldName: string;
-    label: string;
-}
-
-interface User {
-    id: number;
-    [key: string]: any;
-}
-
-interface FilterState {
-    [key: string]: string;
-}
-
-function UserTable({ columns }: UserTableProps) {
-    const filterUser = useSelector((state: RootState) => state.filter as FilterState);
-    const users = useSelector((state: RootState) => state.users.users as User[]);
+function UserTable({ columns }: IUserTableProps) {
+    const filterUser = useSelector((state: RootState) => state.filter as IFilterState);
+    const users = useSelector((state: RootState) => state.users.users as IUser[]);
 
     const filteredUsers = users.filter((user) =>
         Object.keys(filterUser).every((key) => {

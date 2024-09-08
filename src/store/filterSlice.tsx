@@ -1,25 +1,22 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IFilterState} from '../types/interfaces';  
 
-interface FilterState {
-  [key: string]: string;
-}
-
-interface FilterPayload {
-  name: keyof FilterState;
+interface IFilterPayload {
+  name: keyof IFilterState;
   value: string;
 }
 
-const initialState: FilterState = {};
+const initialState: IFilterState = {};
 
 const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    setFilter: (state, action: PayloadAction<FilterPayload>) => {
+    setFilter: (state, action: PayloadAction<IFilterPayload>) => {
       const { name, value } = action.payload;
       state[name] = value;
     },
-    clearFilter: (state, action: PayloadAction<keyof FilterState>) => {
+    clearFilter: (state, action: PayloadAction<keyof IFilterState>) => {
       state[action.payload] = "";
     }
   },
